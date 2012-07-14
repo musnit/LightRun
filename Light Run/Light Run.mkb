@@ -1,0 +1,32 @@
+#!/usr/bin/env mkb
+
+options
+{
+	s3e-data-dir="Resources"
+
+	module_path="../cocos2dx/proj.marmalade/"
+	module_path="../Box2D/proj.marmalade/"
+	module_path="../CocosDenshion/proj.marmalade/"
+}
+
+includepaths
+{
+	..
+}
+subprojects
+{
+	IwGL
+	Box2D
+	cocos2dx
+	CocosDenshion
+}
+
+# files specifies all files to build
+files
+{
+	[Main]
+	(src)
+	"*.h"
+	"*.cpp"
+# Add new source files here
+}
