@@ -69,7 +69,6 @@ void HelloWorld::update(ccTime dt) {
 	if(move==false){
 		spawnrate+=dt;
 		if(spawnrate>=1){
-			CCLog("asd");
 			spawnrate=3;
 			CCActionManager::sharedManager()->resumeTarget(_boss);
 			move=true;
@@ -79,7 +78,7 @@ void HelloWorld::update(ccTime dt) {
 		spawnrate-=dt;
 		if((spawnrate<=0)&&(_boss->getPositionY()<winSize.height*0.1+0.5*winSize.height)){//doesn't account for change in players height on new platform
 			Light* test = new Light();
-			test->setPosition(ccp(_boss->getPositionX(), _boss->getPositionY()));
+			test->setPosition(ccp(_boss->getPositionX()+50, _boss->getPositionY()));
 			this->addChild(test);	
 			test->runAction(CCSequence::actions(CCMoveBy::actionWithDuration( 4 ,ccp(-winSize.width*1.5, 0)),CCCallFunc::actionWithTarget(test,callfunc_selector(Light::removeFromParentAndCleanup)), NULL));
 			spawnrate=0;
