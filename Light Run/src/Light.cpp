@@ -10,7 +10,6 @@ Light::Light()
 void Light::draw(){
 		
 	CCSize s = CCDirector::sharedDirector()->getWinSize();
-	CCLog("%f, %f",MAX(-50,this->getPositionX()-s.width*0.9),MIN(ABS(s.width*0.9-getPositionX()),50));
 	glLineWidth( 5.0f );
 	glColor4ub(255,0,0,255);
 	ccDrawLine( ccp(-50,0), ccp(MIN(s.width*0.9-getPositionX(),50),0));
