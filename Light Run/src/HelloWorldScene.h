@@ -2,6 +2,7 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
+#include "TrailedCCSprite.h"
 using namespace cocos2d;
 
 class HelloWorld : public CCLayer
@@ -10,7 +11,7 @@ private:
 	bool move;
 	float spawnrate;
 	CCSpriteBatchNode * _batchNode;
-	CCSprite* _player;
+	TrailedCCSprite* _player;
 	CCSprite* _boss;
 	void update(ccTime dt);
 	CCSize winSize;
