@@ -1,11 +1,15 @@
+#ifndef LIGHT
+#define LIGHT
 
-#include "cocos2d.h"
+#include "GameObject.h"
 using namespace cocos2d;
 
-class Light : public CCNode
+class Light : public GameObject
 {
 public:
 	Light();
+	static Light* retainedLight();
 	virtual void draw();
 	virtual void removeFromParentAndCleanup();
 };
+#endif
